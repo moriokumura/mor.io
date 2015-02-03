@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>
-    <%= content_for?(:title) ? "#{yield(:title)} - #{configatron.app_name}" : configatron.app_name %>
+    <%= content_for?(:title) ? yield(:title) : configatron.app_name %>
   </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <link href='//fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
@@ -37,6 +37,10 @@
   </div>
 
   <footer>
+    <div class="follow-me-button">
+      <a href="https://twitter.com/moriook" class="twitter-follow-button" data-show-count="false">Follow @moriook</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    </div>
     <ul class="links">
       <li><%= mail_to 'morio.okumura@gmail.com', fa_icon('envelope-o') %></li>
       <li><%= link_to fa_icon(:twitter), 'https://twitter.com/moriook', target: :blank %></li>
