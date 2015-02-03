@@ -21,6 +21,17 @@
     ga('create', 'UA-29590509-1', 'auto');
     ga('send', 'pageview');
   </script>
+  <script>
+    var _prum = [['id', '54c62411abe53d136ccdccb2'],
+                 ['mark', 'firstbyte', (new Date()).getTime()]];
+    (function() {
+        var s = document.getElementsByTagName('script')[0]
+          , p = document.createElement('script');
+        p.async = 'async';
+        p.src = '//rum-static.pingdom.net/prum.min.js';
+        s.parentNode.insertBefore(p, s);
+    })();
+  </script>
 </head>
 <body>
 
@@ -45,7 +56,7 @@
       <li><%= mail_to 'morio.okumura@gmail.com', fa_icon('envelope-o') %></li>
       <li><%= link_to fa_icon(:twitter), 'https://twitter.com/moriook', target: :blank %></li>
       <li><%= link_to fa_icon('facebook-official'), 'https://www.facebook.com/morio.okumura', target: :blank %></li>
-      <li><%= link_to fa_icon('linkedin-square'), 'http://jp.linkedin.com/in/moriookumura', target: :blank %></li>
+      <li><%= link_to fa_icon('linkedin-square'), 'https://www.linkedin.com/in/moriookumura', target: :blank %></li>
       <li><%= link_to fa_icon(:github), 'https://github.com/moriokumura', target: :blank %></li>
     </ul>
     <div class="copyright">
