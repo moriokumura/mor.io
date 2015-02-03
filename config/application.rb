@@ -24,7 +24,7 @@ module MorIo
     config.active_record.raise_in_transactional_callbacks = true
     
     # Global values
-    configatron.app_name = 'MorIo'
+    configatron.app_name = 'Mor.io'
     configatron.app_key = 'morio'
     configatron.app_host = 'mor.io'
   end

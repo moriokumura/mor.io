@@ -13,16 +13,16 @@
     <meta name="description" content="<%= truncate(yield(:description), length: 155) %>">
   <% end %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-29590509-1', 'auto');
+    ga('send', 'pageview');
+  </script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div class="links pull-right">
-        <%= link_to 'Bio', '#' %>
-        <%= link_to 'Lab', '#' %>
-      </div>
-    </div>
-  </header>
 
   <div class="container">
     <% if notice || alert %>
@@ -38,11 +38,11 @@
 
   <footer>
     <ul class="links">
-      <li><%= link_to 'Home', root_path %></li>
       <li><%= mail_to 'morio.okumura@gmail.com', fa_icon('envelope-o') %></li>
       <li><%= link_to fa_icon(:twitter), 'https://twitter.com/moriook', target: :blank %></li>
       <li><%= link_to fa_icon('facebook-official'), 'https://www.facebook.com/morio.okumura', target: :blank %></li>
       <li><%= link_to fa_icon('linkedin-square'), 'http://jp.linkedin.com/in/moriookumura', target: :blank %></li>
+      <li><%= link_to fa_icon(:github), 'https://github.com/moriokumura', target: :blank %></li>
     </ul>
     <div class="copyright">
       &copy;<%= Date.today.year %> Morio Okumura
