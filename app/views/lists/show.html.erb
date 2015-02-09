@@ -1,6 +1,10 @@
 <% content_for :title do @list.title end -%>
 <% content_for :description do @list.description end -%>
 
+<header id="header-lists-show">
+  <%= link_to 'The lists', lists_path %>
+</header>
+
 <div class="row" id="lists-show">
   
   <div class="list col-sm-8 col-sm-offset-2">
