@@ -31,6 +31,7 @@ gem 'rails3-jquery-autocomplete'
 # misc
 gem 'rails_12factor'
 gem 'newrelic_rpm'
+gem 'rollbar'
 
 group :development, :test do
   gem 'pry'
