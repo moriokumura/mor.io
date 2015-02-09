@@ -7,13 +7,11 @@ gem 'pg'
 gem 'devise'
 gem 'configatron'
 gem 'kaminari'
-gem 'paper_trail'
+gem 'paper_trail', '~> 4.0.0.beta'
+gem 'friendly_id'
 gem 'rails_autolink'
 gem 'validate_url'
-# gem 'carrierwave', github: 'carrierwaveuploader/carrierwave' # To use cache_storage = :fog
-# gem 'mini_magick'
-# gem 'fog'
-# gem 'friendly_id'
+gem 'acts_as_list'
 
 # assets
 gem 'jquery-rails'
