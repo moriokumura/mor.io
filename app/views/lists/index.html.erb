@@ -1,0 +1,26 @@
+<% content_for :title do 'The lists' end -%>
+<% content_for :description do 'The lists curated by Morio Okumura' end -%>
+
+<div class="row" id="lists-index">
+  
+  <div class="list col-sm-8 col-sm-offset-2">
+    <div class="list-intro">
+      <h1>The lists</h1>
+      <p>The lists curated by Morio Okumura</p>
+    </div>
+    <div class="list-items">
+      <% List.all.each do |list| %>
+        <div class="list-item">
+          <h2><%= link_to list.title, list %></h2>
+          <p><%= list.description %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="list-footer">
+      <div class="follow-me-button">
+        <a href="https://twitter.com/moriook" class="twitter-follow-button" data-show-count="false">Follow @moriook</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      </div>
+    </div>
+  </div>
+</div>

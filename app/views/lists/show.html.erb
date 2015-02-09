@@ -1,0 +1,28 @@
+<% content_for :title do @list.title end -%>
+<% content_for :description do @list.description end -%>
+
+<div class="row" id="lists-show">
+  
+  <div class="list col-sm-8 col-sm-offset-2">
+    <div class="list-intro">
+      <h1><%= @list.title %></h1>
+      <p><%= @list.description %></p>
+    </div>
+    <div class="list-items">
+      <% @list.list_items.each do |list_item| %>
+        <div class="list-item">
+          <h2><%= link_to list_item.title, list_item.url %></h2>
+          <h3><%= list_item.subtitle %></h3>
+          <p><%= list_item.description %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="list-footer">
+      <%= link_to "#{fa_icon('twitter')} Tweet".html_safe, "https://twitter.com/intent/tweet?url=#{list_url(@list)}&text=#{@list.title}&via=moriook", target: :blank, class: 'pull-right share-button' %>
+      <div class="updated-at">
+        <%=  @list.updated_at.strftime('%b %-d, %Y') %>
+        by <%= @list.user.name %>
+      </div>
+    </div>
+  </div>
+</div>
