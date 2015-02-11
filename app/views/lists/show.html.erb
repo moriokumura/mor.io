@@ -13,11 +13,19 @@
       <p><%= @list.description %></p>
     </div>
     <div class="list-items">
-      <% @list.list_items.each do |list_item| %>
+      <% @list.list_items.includes(:attribute_items).each do |list_item| %>
         <div class="list-item">
           <h2><%= link_to list_item.title, list_item.url %></h2>
           <h3><%= list_item.subtitle %></h3>
           <p><%= list_item.description %></p>
+          <dl class="attribute-items row">
+            <% list_item.attribute_items.each do |attribute| %>
+            <div class="attribute-item clearfix">
+              <dt class="col-sm-2"><%= attribute.title %></dt>
+              <dd class="col-sm-10"><%== attribute.body %></dd>
+            </div>
+            <% end %>
+          </dl>
         </div>
       <% end %>
     </div>
