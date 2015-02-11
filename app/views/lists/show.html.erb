@@ -17,21 +17,19 @@
         <div class="list-item" data-list-item>
           <h2><%= list_item.title %></h2>
           <h3><%= list_item.subtitle %></h3>
-          <p><%= list_item.description %></p>
-          <% if list_item.attribute_items.present? %>
-            <div data-unfold>more</div>
-            <div data-hidden-area style="display:none;">
-              <dl class="attribute-items row">
-                <% list_item.attribute_items.each do |attribute| %>
-                <div class="attribute-item clearfix">
-                  <dt class="col-sm-2"><%= attribute.title %></dt>
-                  <dd class="col-sm-10"><%== attribute.body %></dd>
-                </div>
-                <% end %>
-              </dl>
-              <div data-fold>less</div>
-            </div>
-          <% end %>
+          <div data-unfold>more</div>
+          <div data-hidden-area style="display:none;">
+            <p><%= list_item.description %></p>
+            <dl class="attribute-items row">
+              <% list_item.attribute_items.each do |attribute| %>
+              <div class="attribute-item clearfix">
+                <dt class="col-sm-2"><%= attribute.title %></dt>
+                <dd class="col-sm-10"><%== attribute.body %></dd>
+              </div>
+              <% end %>
+            </dl>
+            <div data-fold>less</div>
+          </div>
         </div>
       <% end %>
     </div>
