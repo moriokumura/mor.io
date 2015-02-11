@@ -11,10 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150204134906) do
+ActiveRecord::Schema.define(version: 20150210135209) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "attribute_items", force: :cascade do |t|
+    t.string   "target_type", null: false
+    t.integer  "target_id",   null: false
+    t.string   "key",         null: false
+    t.string   "title",       null: false
+    t.text     "body"
+    t.integer  "position",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "attribute_items", ["position"], name: "index_attribute_items_on_position", using: :btree
+  add_index "attribute_items", ["target_type", "target_id"], name: "index_attribute_items_on_target_type_and_target_id", using: :btree
 
   create_table "list_items", force: :cascade do |t|
     t.integer  "list_id",     null: false

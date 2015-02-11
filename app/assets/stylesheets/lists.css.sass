@@ -1,3 +1,5 @@
+@import variables
+
 #lists-show,
 #lists-index
 	.list-intro
@@ -32,6 +34,16 @@
 			font-family: Lora, Georgia
 			font-size: 15px
 			line-height: 25px
+		.attribute-items
+			font-family: 'Source Sans Pro', sans-serif
+			font-size: 15px
+			margin-top: 30px
+			.attribute-item
+				margin: 8px 0
+				dt
+					color: #888
+					font-size: 14px
+					font-weight: normal
 	.list-footer
 		color: #bbb
 		font-size: 13px
@@ -49,3 +61,9 @@
 			text-decoration: none
 		i
 			font-size: 14px
+
+@media (max-width: $screen-sp-width-max)
+	#lists-show .list-intro
+		margin: 20px 0 30px
+	#lists-show .list-item .attribute-items .attribute-item
+		margin: 16px 0
