@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20150210135209) do
   create_table "attribute_items", force: :cascade do |t|
     t.string   "target_type", null: false
     t.integer  "target_id",   null: false
-    t.string   "key",         null: false
     t.string   "title",       null: false
     t.text     "body"
     t.integer  "position",    null: false
