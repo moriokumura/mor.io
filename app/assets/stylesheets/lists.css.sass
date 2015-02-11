@@ -16,6 +16,8 @@
 	.list-item
 		border-bottom: 1px solid #eee
 		padding: 30px 0
+		&[data-expanded=false]
+			cursor: pointer
 		&:first-child
 			border-top: 1px solid #eee
 		h2
@@ -34,6 +36,7 @@
 			font-family: Lora, Georgia
 			font-size: 15px
 			line-height: 25px
+			margin-top: 20px
 		.attribute-items
 			font-family: 'Source Sans Pro', sans-serif
 			font-size: 15px
@@ -44,6 +47,10 @@
 					color: #888
 					font-size: 14px
 					font-weight: normal
+		[data-unfold], [data-fold]
+			color: #6EA1F0
+			cursor: pointer
+			font-family: 'Source Sans Pro', sans-serif
 	.list-footer
 		color: #bbb
 		font-size: 13px
