@@ -14,18 +14,24 @@
     </div>
     <div class="list-items">
       <% @list.list_items.includes(:attribute_items).each do |list_item| %>
-        <div class="list-item">
-          <h2><%= link_to list_item.title, list_item.url %></h2>
+        <div class="list-item" data-list-item>
+          <h2><%= list_item.title %></h2>
           <h3><%= list_item.subtitle %></h3>
           <p><%= list_item.description %></p>
-          <dl class="attribute-items row">
-            <% list_item.attribute_items.each do |attribute| %>
-            <div class="attribute-item clearfix">
-              <dt class="col-sm-2"><%= attribute.title %></dt>
-              <dd class="col-sm-10"><%== attribute.body %></dd>
+          <% if list_item.attribute_items.present? %>
+            <div data-unfold>more</div>
+            <div data-hidden-area style="display:none;">
+              <dl class="attribute-items row">
+                <% list_item.attribute_items.each do |attribute| %>
+                <div class="attribute-item clearfix">
+                  <dt class="col-sm-2"><%= attribute.title %></dt>
+                  <dd class="col-sm-10"><%== attribute.body %></dd>
+                </div>
+                <% end %>
+              </dl>
+              <div data-fold>less</div>
             </div>
-            <% end %>
-          </dl>
+          <% end %>
         </div>
       <% end %>
     </div>
