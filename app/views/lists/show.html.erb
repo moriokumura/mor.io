@@ -18,16 +18,20 @@
           <h2><%= list_item.title %></h2>
           <h3><%= list_item.subtitle %></h3>
           <div data-unfold>more</div>
-          <div data-hidden-area style="display:none;">
-            <p><%= list_item.description %></p>
-            <dl class="attribute-items row">
-              <% list_item.attribute_items.each do |attribute| %>
-              <div class="attribute-item clearfix">
-                <dt class="col-sm-2"><%= attribute.title %></dt>
-                <dd class="col-sm-10"><%== attribute.body %></dd>
-              </div>
-              <% end %>
-            </dl>
+          <div data-hidden-area>
+            <% if list_item.description.present? %>
+              <p><%= list_item.description %></p>
+            <% end %>
+            <% if list_item.attribute_items.present? %>
+              <dl class="attribute-items row">
+                <% list_item.attribute_items.each do |attribute| %>
+                <div class="attribute-item clearfix">
+                  <dt class="col-sm-2"><%= attribute.title %></dt>
+                  <dd class="col-sm-10"><%== attribute.body %></dd>
+                </div>
+                <% end %>
+              </dl>
+            <% end %>
             <div data-fold>less</div>
           </div>
         </div>
