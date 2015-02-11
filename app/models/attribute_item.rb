@@ -5,7 +5,8 @@ class AttributeItem < ActiveRecord::Base
   
   belongs_to :target, polymorphic: true
   
-  validates :key, presence: true
+  validates :target_type, presence: true
+  validates :target_id, presence: true
   validates :title, presence: true
   validates :body, presence: true
 end
