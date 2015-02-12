@@ -1,7 +1,11 @@
-@import bootstrap
 @import variables
 
-body
-	color: #444
-	font-family: 'Open Sans', 'Lucida Grande', sans-serif
-	font-size: 13px
+.btn
+	font-family: $main-font-family
+	&.btn-primary
+		background-color: $btn-primary-color
+		border-radius: 17px
+		color: $btn-primary-border
+		padding: 6px 15px
+	&.btn-link.cancel
+		color: #bbb

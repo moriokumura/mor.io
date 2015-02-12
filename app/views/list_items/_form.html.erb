@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-sm-8 col-sm-offset-2">
+    
+    <%= form_for @list_item, html: { class: 'form form-horizontal form-list-item' } do |f| %>
+      <div class="form-submits clearfix">
+        <%= link_to 'Cancel', :back, class: 'btn btn-link cancel' %>
+        <div class="pull-right">
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
+      <%#= render partial: 'shared/error_messages', locals: { object: @list_item } %>
+      <div class="form-inputs">
+        <div class="form-group">
+          <%= f.text_field :title, class: 'form-control title', placeholder: 'Title' %>
+        </div>
+        <div class="form-group">
+          <%= f.text_field :subtitle, class: 'form-control subtitle', placeholder: 'Subtitle' %>
+        </div>
+        <div class="form-group">
+          <%= f.text_area :description, class: 'form-control paragraph', placeholder: 'Write description' %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -5,8 +5,11 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
   
+  devise_for :users, path: :account, only: [:sign_in, :sign_out, :session]
+  
   resources :lists, only: :index
   resources :lists, path: :list, only: :show
+  resources :list_items, path: :list_item, except: [:index]
 
   # Example resource route with sub-resources:
   #   resources :products do
