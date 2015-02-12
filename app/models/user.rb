@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  has_paper_trail
+  has_paper_trail only: %w(name email slug)
   extend FriendlyId
   friendly_id :name, use: :slugged
   

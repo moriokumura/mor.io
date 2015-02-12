@@ -5,12 +5,12 @@
 	.list-intro
 		margin: 100px 0 80px
 		h1
-			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+			font-family: $title-font-family
 			font-weight: bold
 			line-height: 45px
 			margin-bottom: 20px
 		p
-			font-family: Lora, Georgia
+			font-family: $paragraph-font-family
 			font-size: 15px
 			line-height: 25px
 	.list-item
@@ -21,7 +21,7 @@
 		&:first-child
 			border-top: 1px solid #eee
 		h2
-			font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif
+			font-family: $title-font-family
 			font-size: 22px
 			margin: 7px 0
 			a
@@ -29,16 +29,16 @@
 				font-weight: bold
 		h3
 			color: #666
-			font-family: 'Source Sans Pro', sans-serif
+			font-family: $subtitle-font-family
 			font-size: 16px
 			margin: 7px 0 15px
 		p
-			font-family: Lora, Georgia
+			font-family: $paragraph-font-family
 			font-size: 16px
 			line-height: 25px
 			margin-top: 20px
 		.attribute-items
-			font-family: 'Source Sans Pro', sans-serif
+			font-family: $subtitle-font-family
 			font-size: 16px
 			margin-top: 30px
 			.attribute-item
@@ -50,7 +50,7 @@
 		[data-unfold], [data-fold]
 			color: #6EA1F0
 			cursor: pointer
-			font-family: 'Source Sans Pro', sans-serif
+			font-family: $subtitle-font-family
 			font-size: 16px
 	.list-footer
 		color: #bbb
@@ -70,7 +70,7 @@
 		i
 			font-size: 14px
 
-@media (max-width: $screen-sp-width-max)
+@media (max-width: $screen-xs-min)
 	#lists-show .list-intro
 		margin: 20px 0 30px
 		h1
@@ -81,6 +81,6 @@
 	[data-hidden-area]
 		display: none
 
-@media (min-width: $screen-sp-width-max + 1)
+@media (min-width: $screen-xs-min + 1)
 	[data-unfold], [data-fold]
 		display: none
