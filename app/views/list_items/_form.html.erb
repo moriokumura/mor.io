@@ -20,21 +20,24 @@
           <%= f.text_area :description, class: 'form-control paragraph', placeholder: 'Write description' %>
         </div>
         
-        <% if @list_item.attribute_items.present? %>
-          <div class="attribute-items clearfix">
-            <% @list_item.attribute_items.each_with_index do |attribute, i| %>
-              <%= hidden_field_tag "attribute_items[#{i}][id]", attribute.id %>
-              <div class="attribute-item row">
-                <div class="col-sm-3">
-                  <%= text_field_tag "attribute_items[#{i}][title]", attribute.title, class: 'form-control attribute-title', placeholder: 'Name' %>
-                </div>
-                <div class="col-sm-9">
-                  <%= text_area_tag "attribute_items[#{i}][body]", attribute.body, class: 'form-control attribute-body', placeholder: 'Value' %>
-                </div>
+        <div class="attribute-items clearfix">
+          <% @list_item.attribute_items.each_with_index do |attribute, i| %>
+            <%= hidden_field_tag "attribute_items[#{i}][id]", attribute.id %>
+            <div class="attribute-item row">
+              <div class="col-sm-3">
+                <%= text_field_tag "attribute_items[#{i}][title]", attribute.title, class: 'form-control attribute-title', placeholder: 'Name' %>
               </div>
-            <% end %>
+              <div class="col-sm-9">
+                <%= text_area_tag "attribute_items[#{i}][body]", attribute.body, class: 'form-control attribute-body', placeholder: 'Value' %>
+              </div>
+            </div>
+          <% end %>
+          <div class="attribute-item row">
+            <div class="col-sm-12">
+              <%= link_to 'Add attribute', new_list_item_attribute_item_path(@list_item) %>
+            </div>
           </div>
-        <% end %>
+        </div>
       </div>
     <% end %>
   </div>

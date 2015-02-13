@@ -36,14 +36,8 @@ class ListItemsController < ApplicationController
       params.require(:list_item).permit(:title, :subtitle, :description)
     end
     
-    def attribute_item_params(id)
-      params[:attribute_items].map { |item|
-        item.require(:attribute_item).permit(:title, :body)
-      }
-    end
-    
     def authenticate_owner!
-      unless current_user.try(:id) == @list_item.list.user_id
+      unless current_user.try(:id) == @list_item.user_id
         render text: :unauthorized, status: :unauthorized
       end
     end
