@@ -1,5 +1,7 @@
 @import variables
 
+$placeholder-color: #ccc
+
 .form-horizontal.form-list-item,
 .form-horizontal.form-attribute-item
 	font-family: Lora, Georgia
@@ -22,6 +24,12 @@
 		font-size: 16px
 		line-height: 22px
 		padding: 10px 14px
+		&::-webkit-input-placeholder
+			color: $placeholder-color
+		&::-moz-placeholder
+			color: $placeholder-color
+		&\:-ms-input-placeholder
+			color: $placeholder-color
 		&.title
 			font-family: $title-font-family
 			font-size: 22px
