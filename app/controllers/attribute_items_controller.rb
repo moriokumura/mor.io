@@ -44,7 +44,7 @@ class AttributeItemsController < ApplicationController
     end
     
     def authenticate_owner!
-      unless current_user.try(:id) == @attribute_item.target.user_id
+      unless @attribute_item.owned?(current_user)
         render text: :unauthorized, status: :unauthorized
       end
     end

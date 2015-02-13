@@ -2,6 +2,7 @@ class AttributeItem < ActiveRecord::Base
   
   has_paper_trail
   acts_as_list scope: :target
+  include Ownable
   
   belongs_to :target, polymorphic: true
   
@@ -14,4 +15,5 @@ class AttributeItem < ActiveRecord::Base
   def user_id
     target.user_id
   end
+  
 end

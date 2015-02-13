@@ -2,6 +2,7 @@ class ListItem < ActiveRecord::Base
   
   has_paper_trail
   acts_as_list scope: :list
+  include Ownable
   
   belongs_to :list, counter_cache: :list_item_count
   has_many :attribute_items, lambda { order(position: :asc) }, as: :target
@@ -28,4 +29,5 @@ class ListItem < ActiveRecord::Base
   def user_id
     list.user_id
   end
+  
 end

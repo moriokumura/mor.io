@@ -37,7 +37,7 @@ class ListItemsController < ApplicationController
     end
     
     def authenticate_owner!
-      unless current_user.try(:id) == @list_item.user_id
+      unless @list_item.owned?(current_user)
         render text: :unauthorized, status: :unauthorized
       end
     end

@@ -34,6 +34,11 @@
             <% end %>
             <div data-fold>less</div>
           </div>
+          <% if @list.owned? current_user %>
+            <div class="edit-link">
+              <%= link_to 'Edit', edit_list_item_path(list_item), class: 'btn btn-link edit' %>
+            </div>
+          <% end %>
         </div>
       <% end %>
     </div>
