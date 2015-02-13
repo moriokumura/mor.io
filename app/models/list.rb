@@ -1,11 +1,14 @@
 class List < ActiveRecord::Base
   
   has_paper_trail
+  
   extend FriendlyId
   friendly_id :title, use: :slugged
+  include Ownable
   
   has_many :list_items, lambda { order(position: :asc) }, dependent: :destroy
   belongs_to :user
+  
   
   # Override friendly_id's original slug generation for not downcasing original characters.
   # Because friendly_id uses ActiveSupport::Inflector#parameterize inside,
