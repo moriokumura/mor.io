@@ -25,6 +25,7 @@ gem 'uglifier'
 gem 'compass-rails'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 gem 'google-analytics-turbolinks'
 gem 'rails3-jquery-autocomplete'
 

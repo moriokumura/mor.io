@@ -24,4 +24,8 @@ class ListItem < ActiveRecord::Base
     item.save
   end
   
+  # @return [Number]
+  def user_id
+    list.user_id
+  end
 end

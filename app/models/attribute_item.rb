@@ -9,4 +9,9 @@ class AttributeItem < ActiveRecord::Base
   validates :target_id, presence: true
   validates :title, presence: true
   validates :body, presence: true
+  
+  # @return [Number]
+  def user_id
+    target.user_id
+  end
 end

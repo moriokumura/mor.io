@@ -104,7 +104,7 @@ GEM
       railties (>= 3.2, < 5.0)
     friendly_id (5.1.0)
       activerecord (>= 4.0.0)
-    globalid (0.3.2)
+    globalid (0.3.3)
       activesupport (>= 4.1.0)
     google-analytics-turbolinks (0.0.4)
     hike (1.2.3)
@@ -242,6 +242,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts_as_list
+  autoprefixer-rails
   awesome_print
   better_errors
   bootstrap-sass
