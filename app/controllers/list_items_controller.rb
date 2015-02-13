@@ -12,11 +12,18 @@ class ListItemsController < ApplicationController
   end
   
   def update
-    if @list_item.update(list_item_params)
-      redirect_to @list_item.list
-    else
-      render :edit
+    ActiveRecord::Base.transaction do
+      @list_item.update!(list_item_params)
+      params[:attribute_items].each do |id, hash|
+        item = @list_item.attribute_items.find hash[:id]
+        item.title = hash[:title]
+        item.body = hash[:body]
+        item.save!
+      end if params[:attribute_items].present?
     end
+    redirect_to list_path(@list_item.list, anchor: "list-item-#{@list_item.id}")
+  rescue => e
+    render :edit
   end
   
   private
@@ -27,6 +34,12 @@ class ListItemsController < ApplicationController
     
     def list_item_params
       params.require(:list_item).permit(:title, :subtitle, :description)
+    end
+    
+    def attribute_item_params(id)
+      params[:attribute_items].map { |item|
+        item.require(:attribute_item).permit(:title, :body)
+      }
     end
     
     def authenticate_owner!

@@ -14,7 +14,7 @@
     </div>
     <div class="list-items">
       <% @list.list_items.includes(:attribute_items).each do |list_item| %>
-        <div class="list-item" data-list-item>
+        <div class="list-item" id="list-item-<%= list_item.id %>" data-list-item>
           <h2><%= list_item.title %></h2>
           <h3><%= list_item.subtitle %></h3>
           <div data-unfold>more</div>
