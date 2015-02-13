@@ -2,23 +2,39 @@
   <div class="col-sm-8 col-sm-offset-2">
     
     <%= form_for @list_item, html: { class: 'form form-horizontal form-list-item' } do |f| %>
-      <div class="form-submits clearfix">
+      <div class="form-submits col-sm-12 clearfix">
         <%= link_to 'Cancel', :back, class: 'btn btn-link cancel' %>
         <div class="pull-right">
           <button type="submit" class="btn btn-primary">Save</button>
         </div>
       </div>
-      <%#= render partial: 'shared/error_messages', locals: { object: @list_item } %>
-      <div class="form-inputs">
-        <div class="form-group">
+      <%= render partial: 'shared/error_messages', locals: { object: @list_item } %>
+      <div class="form-inputs clearfix">
+        <div class="form-group col-sm-12">
           <%= f.text_field :title, class: 'form-control title', placeholder: 'Title' %>
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-12">
           <%= f.text_field :subtitle, class: 'form-control subtitle', placeholder: 'Subtitle' %>
         </div>
-        <div class="form-group">
+        <div class="form-group col-sm-12">
           <%= f.text_area :description, class: 'form-control paragraph', placeholder: 'Write description' %>
         </div>
+        
+        <% if @list_item.attribute_items.present? %>
+          <div class="attribute-items clearfix">
+            <% @list_item.attribute_items.each_with_index do |attribute, i| %>
+              <%= hidden_field_tag "attribute_items[#{i}][id]", attribute.id %>
+              <div class="attribute-item row">
+                <div class="col-sm-3">
+                  <%= text_field_tag "attribute_items[#{i}][title]", attribute.title, class: 'form-control attribute-title', placeholder: 'Name' %>
+                </div>
+                <div class="col-sm-9">
+                  <%= text_area_tag "attribute_items[#{i}][body]", attribute.body, class: 'form-control attribute-body', placeholder: 'Value' %>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
       </div>
     <% end %>
   </div>
