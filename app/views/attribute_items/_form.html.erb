@@ -3,7 +3,7 @@
     
     <%= form_for @attribute_item, url: @url, html: { class: 'form form-horizontal form-attribute-item' } do |f| %>
       <div class="form-submits col-sm-12 clearfix">
-        <%= link_to 'Cancel', :back, class: 'btn btn-link cancel' %>
+        <%= link_to 'Cancel', edit_polymorphic_path(@attribute_item.target), class: 'btn btn-link cancel' %>
         <div class="pull-right">
           <button type="submit" class="btn btn-primary">Save</button>
         </div>

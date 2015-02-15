@@ -7,6 +7,7 @@ class AttributeItemsController < ApplicationController
   
   def new
     @attribute_item = AttributeItem.new
+    @attribute_item.target = @target
     @url = polymorphic_path([@target, AttributeItem])
   end
   
