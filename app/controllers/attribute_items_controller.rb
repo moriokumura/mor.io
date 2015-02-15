@@ -14,7 +14,7 @@ class AttributeItemsController < ApplicationController
     @attribute_item = AttributeItem.new(attribute_item_params)
     @attribute_item.target = @target
     @attribute_item.save!
-    redirect_to list_path(@attribute_item.target.list, anchor: "list-item-#{@attribute_item.target_id}")
+    redirect_to edit_list_item_path(@attribute_item.target)
   rescue => e
     render :new
   end
@@ -24,7 +24,7 @@ class AttributeItemsController < ApplicationController
   
   def update
     @attribute_item.update!(attribute_item_params)
-    redirect_to list_path(@attribute_item.target.list, anchor: "list-item-#{@attribute_item.target_id}")
+    redirect_to edit_list_item_path(@attribute_item.target)
   rescue => e
     render :edit
   end
