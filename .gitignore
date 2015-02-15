@@ -10,4 +10,5 @@
 /vendor
 /public/uploads/
 /config/application.yml
+.env
 .DS_store
