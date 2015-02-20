@@ -1,15 +1,102 @@
+@import variables
+@import compass/css3
+
 #home-index
-	.welcome-message
-		margin-top: 60px
-		margin-bottom: 60px
-		padding: 15px
+	section
+		border-top: 1px solid #ddd
+		color: #666
+		font-size: 17px
+		line-height: 30px
+		padding: 72px 0
+		text-align: center
+	h1, h2
+		font-family: $title-font-family
+	h3
+		font-family: $subtitle-font-family
+		font-size: 18px
+		line-height: 1.2em
+	p
+		font-family: $paragraph-font-family
+	ul
+		padding-left: 0
+	li
+		list-style: none
+	header
+		font-size: 16px
+		padding: 15px 20px
+	#cover-image
+		background-image: url('home-cover.jpg')
+		background-position: center
+		height: 400px
+		padding: 0
+		.overlay
+			background-color: rgba(0,0,0,.3)
+			position: relative
+			height: 400px
+		.link-home, .link-lists
+			color: #fff
+			font-size: 15px
+			position: absolute
+			top: 15px
+		.link-home
+			left: 20px
+		.link-lists
+			right: 20px
 		h1
-			margin-bottom: 50px
-		section
-			color: #666
-			font-size: 17px
-			line-height: 30px
-			margin: 50px 0
-		.listups ul
-			margin-top: 5px
-			padding-left: 30px
+			color: #fff
+			font-size: 44px
+			margin: 0
+			padding-top: 212px
+	#about-me
+		text-align: left
+		h3
+			font-size: 24px
+			margin: 50px auto 16px
+			max-width: 500px
+		p
+			margin: 0 auto 16px
+			max-width: 500px
+	#toolbox
+		background-color: #666
+		+background-image(linear-gradient(-45deg, #888, #444))
+		color: #fff
+		h2
+			margin-bottom: 16px
+		h3, ul
+			margin-bottom: 48px
+		li
+			font-size: 15px
+			margin-top: 6px
+	#social-links
+		h2, ul
+			margin-bottom: 60px
+		li
+			display: inline-block
+			font-size: 48px
+			margin: 15px 20px
+			.fa-twitter
+				color: #55acee
+			.fa-facebook-official
+				color: #3b5998
+			.fa-linkedin-square
+				color: #0976b4
+			.fa-medium
+				color: #333332
+			.fa-instagram
+				color: #3f729b
+			.fa-github
+				color: #333
+		p
+			font-size: 16px
+		.contact-me
+			border: 1px solid #bbb
+			border-radius: 27px
+			color: #777
+			display: inline-block
+			font-size: 15px
+			margin-top: 48px
+			padding: 9px 15px
+			&:hover
+				border: 1px solid $brand-primary
+				color: $brand-primary
+				text-decoration: none

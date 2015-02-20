@@ -42,6 +42,6 @@ group :development, :test do
   gem 'awesome_print'
   gem 'better_errors'
   gem 'faker'
-  gem 'rack-mini-profiler'
+  # gem 'rack-mini-profiler'
   gem 'spring'
 end

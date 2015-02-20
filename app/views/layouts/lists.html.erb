@@ -1,0 +1,15 @@
+<div class="container">
+  <% if notice || alert %>
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3 alert alert-warning">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <%= notice %>
+        <%= alert %>
+      </div>
+    </div>
+  <% end %>
+  <%= render template: 'layouts/application' %>
+</div>
+<%= render partial: 'shared/footer' %>

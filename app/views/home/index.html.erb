@@ -1,108 +1,81 @@
 <% content_for :title do "Morio Okumura" end -%>
-<% content_for :mixpanel_event do "top page" end -%>
-<div class="row" id="home-index">
-  <div class="welcome-message col-sm-6 col-sm-offset-3">
-    <h1>Hello, I'm Morio Okumura</h1>
-    <section>
-      <p>
-        I'm full-stack engineer located in Tokyo, Japan.
-      </p>
-    </section>
-    <section class="listups">
-      I speak
-      <ul>
-        <li>Japanese (mother tongue)</li>
-        <li>English</li>
-      </ul>
-    </section>
+<% content_for :description do "I'm Morio Okumura, a web developer. Interested in tech and startups." end -%>
+
+<div id="home-index">
+  
+  <section id="cover-image">
+    <div class="overlay">
+      <%= link_to configatron.app_name, root_path, class: 'link-home' %>
+      <%= link_to 'The Lists', lists_path, class: 'link-lists' %>
+      <h1>Hello, I'm Morio.</h1>
+    </div>
+  </section>
+  
+  <section id="about-me">
+    <div class="container">
+      <p>I'm Morio Okumura, a web developer.</p>
+      
+      <p>I'm located in Tokyo, Japan, but glad to travel to see you all over the world.</p>
+      
+      <h3>What I can</h3>
+      <p>I can build web service. I've been working as a web engineer for 5 years, mainly developing e-commerce sites. I also do some web design, marketing, and SEO stuff.</p>
+      <p>I'm currently working full-time. But if you are looking for someone who can help develop your OSS or side-project, or new venture, let me know. I might be able to help you.</p>
+      
+      <h3>Interests</h3>
+      <p>I'm looking for cool things every day. My favorite topics are startup, UI/UX, SaaS, cryptocurrency, and foreign languages. I tweets what I find and my thoughts about them on <%= link_to 'my Twitter', 'https://twitter.com/moriook', target: :blank %>.</p>
+      
+      <h3>Japanese</h3>
+      <p>Although I'm writing this in English, my mother tongue is Japanese, and I'm raised in Japan. So I know a lot of Japanese culture, food, geo, history, etc.</p>
+      <p>Ask me if you want to hear about those topics. Or if you are planning to visit Japan, feel free to contact me.</p>
+    </div>
+  </section>
     
-    <section class="listups">
-      My tech experiences are
+  <section id="toolbox">
+    <div class="container">
+      <h2>My Toolbox</h2>
+      <h3>Tools I use when I develop new web services.</h3>
       <ul>
-        <li>Ruby / Ruby on Rails</li>
-        <li>PHP</li>
-        <li>CSS / Sass</li>
-        <li>JavaScript / jQuery</li>
-        <li>AWS</li>
-        <li>Heroku</li>
-        <li>Linux</li>
-        <li>MySQL</li>
+        <li>Ruby</li>
+        <li>Ruby on Rails</li>
+        <li>SASS</li>
+        <li>CoffeeScript</li>
+        <li>Bootstrap</li>
+        <li>jQuery</li>
+        <li>PostgreSQL</li>
         <li>MongoDB</li>
         <li>Redis</li>
         <li>Nginx</li>
-        <li>Apache</li>
-        <li>Adobe Illustrator</li>
-      </ul>
-    </section>
-    
-    <section class="listups">
-      Tools I love
-      <ul>
-        <li>Github</li>
-        <li>Ruby on Rails</li>
-        <li>Cloudflare</li>
         <li>Heroku</li>
-        <li>Bootstrap</li>
-        <li>Google Analytics</li>
-        <li>Google Drive</li>
-        <li>Trello</li>
+        <li>AWS</li>
+        <li>CloudFlare</li>
+        <li>GitHub</li>
         <li>Adobe Illustrator</li>
+        <li>Google Analytics</li>
+        <li>Google Docs</li>
+        <li>Trello</li>
       </ul>
-    </section>
-    
-    <section class="listups">
-      Products I love
-      <ul>
-        <li>Twitter</li>
-        <li>iPhone</li>
-        <li>Amazon Kindle</li>
-        <li>Minecraft</li>
-      </ul>
-    </section>
-    
-    <section class="listups">
-      Other things I love
-      <ul>
-        <li>Travel</li>
-        <li>Cartography</li>
-        <li>History</li>
-        <li>Foreign languages</li>
-        <li>Cryptocurrency</li>
-        <li>MOOCs</li>
-        <li>Skiing</li>
-        <li>Sushi</li>
-        <li>Vocaloid</li>
-        <li>Pokemon</li>
-      </ul>
-    </section>
-    
-    <section class="listups">
-      Values I hold
-      <ul>
-        <li>Transparency</li>
-        <li>Progress</li>
-        <li>Autonomy</li>
-        <li>Freedom</li>
-        <li>Aesthetics</li>
-        <li>Listening</li>
-        <li>Efficiency</li>
-        <li>Simplicity</li>
-        <li>Joy</li>
-      </ul>
-    </section>
-    
-    <section class="listups">
-      My side projects are
-      <ul>
-        <li><%= link_to 'The lists', lists_path %></li>
-        <li><a href="http://moa.io">Moa flashcard</a></li>
-        <li><a href="https://www.samepool.net">SamePool</a></li>
-      </ul>
-    </section>
-    
-    <div class="follow-me-button">
-      <a href="https://twitter.com/moriook" class="twitter-follow-button" data-show-count="false">Follow @moriook</a>
-      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+      <p>Of course, I'm always eager to learn new skills.</p>
     </div>
-  </div>
+  </section>
+  
+  <section id="social-links">
+    <div class="container">
+      <h2>You can see me on</h2>
+      <ul class="social-links">
+        <li><%= link_to fa_icon('twitter'), 'https://twitter.com/moriook', target: :blank %></li>
+        <li><%= link_to fa_icon('facebook-official'), 'https://www.facebook.com/morio.okumura', target: :blank %></li>
+        <li><%= link_to fa_icon('linkedin-square'), 'https://www.linkedin.com/in/moriookumura', target: :blank %></li>
+        <li><%= link_to fa_icon('medium'), 'https://medium.com/@moriookumura', target: :blank %></li>
+        <li><%= link_to fa_icon('instagram'), 'https://instagram.com/moriokumura/', target: :blank %></li>
+        <li><%= link_to fa_icon('github'), 'https://github.com/moriokumura', target: :blank %></li>
+      </ul>
+      <p>
+         I'm most active on Twitter, so if you want to know more about me, please follow <a href="https://twitter.com/intent/follow?screen_name=moriook" target="_blank">@moriook</a>
+      </p>
+      <%= mail_to 'morio.okumura@gmail.com', 'Contact me', target: :blank, class: 'contact-me' %>
+    </div>
+    
+  </section>
 </div>
+
+<%= render partial: 'shared/footer' %>

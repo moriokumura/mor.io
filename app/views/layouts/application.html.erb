@@ -34,34 +34,6 @@
   </script>
 </head>
 <body>
-
-  <div class="container">
-    <% if notice || alert %>
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 alert alert-warning">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          <%= notice %>
-          <%= alert %>
-        </div>
-      </div>
-    <% end %>
-    <%= yield %>
-  </div>
-
-  <footer>
-    <ul class="links">
-      <li><%= link_to fa_icon(:home), root_path %></li>
-      <li><%= mail_to 'morio.okumura@gmail.com', fa_icon('envelope-o') %></li>
-      <li><%= link_to fa_icon(:twitter), 'https://twitter.com/moriook', target: :blank %></li>
-      <li><%= link_to fa_icon('facebook-official'), 'https://www.facebook.com/morio.okumura', target: :blank %></li>
-      <li><%= link_to fa_icon('linkedin-square'), 'https://www.linkedin.com/in/moriookumura', target: :blank %></li>
-      <li><%= link_to fa_icon(:github), 'https://github.com/moriokumura', target: :blank %></li>
-    </ul>
-    <div class="copyright">
-      &copy;<%= Date.today.year %> Morio Okumura
-    </div>
-  </footer>
+  <%= yield %>
 </body>
 </html>
