@@ -8,10 +8,18 @@ https://mor.io
 ## Stacks
 
 - Heroku
-- Ruby 2.2.0
-- Ruby on Rails 4.2.0
+- Ruby
+- Ruby on Rails
 - PostgreSQL
 - jQuery
 - CoffeeScript
 - SASS
 - Bootstrap
+
+## Run on local
+
+```
+bundle
+bundle exec rake db:setup
+bundle exec rails s
+```
