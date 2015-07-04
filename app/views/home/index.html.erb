@@ -1,58 +1,36 @@
 <% content_for :title do "Morio Okumura" end -%>
-<% content_for :description do "I'm Morio Okumura, a web developer. Interested in tech and startups." end -%>
 
 <div id="home-index">
   
-  <section id="cover-image">
-    <div class="overlay">
-      <h1>Hello, I'm Morio.</h1>
+  <section id="whoiam">
+    <div class="container">
+      <div class="myicon">
+        <%= image_tag('my_photo.jpg', size: '72x72') %>
+      </div>
+      <p class="text">
+        Hi, I'm Morio Okumura.<br>
+        I'm software engineer mostly working with Ruby on Rails.<br>
+        You can see my tech stack at <a href="http://stackshare.io/moriokumura" target="new">here</a>.
+        Follow me on <a href="https://twitter.com/moriook" target="new">Twitter</a> to get in touch.
+      </p>
     </div>
   </section>
   
-  <section id="about-me">
-    <div class="container">
-      <p>I'm Morio Okumura, a web developer.</p>
-      
-      <p>I'm located in Tokyo, Japan, but glad to travel to see you all over the world.</p>
-      
-      <h3>What I can</h3>
-      <p>I can build web service. I've been working as a web engineer for 5 years, mainly developing e-commerce sites. I also do some web design, marketing, and SEO stuff.</p>
-      <p>I'm currently working full-time. But if you are looking for someone who can help develop your OSS or side-project, or new venture, let me know. I might be able to help you.</p>
-      
-      <h3>Interests</h3>
-      <p>I'm looking for cool things every day. My favorite topics are startup, UI/UX, SaaS, cryptocurrency, and foreign languages. I tweets what I find and my thoughts about them on <%= link_to 'my Twitter', 'https://twitter.com/moriook', target: :blank %>.</p>
-      
-      <h3>Japanese</h3>
-      <p>Although I'm writing this in English, my mother tongue is Japanese, and I'm raised in Japan. So I know a lot of Japanese culture, food, geo, history, etc.</p>
-      <p>Ask me if you want to hear about those topics. Or if you are planning to visit Japan, feel free to contact me.</p>
+  <section id="myprojects" class="row">
+    <h2>My Projects</h2>
+    <div class="project col-sm-6">
+      <%= link_to image_tag('fastvoted.png', size: '320x221'), "http://fastvoted.com", target: :new %>
+      <h3>
+        <a href="http://fastvoted.com" target="new">FastVoted</a>
+      </h3>
+      <p>Get trending social news in your Slack.<br>I'm creator of this service.</p>
     </div>
-  </section>
-    
-  <section id="toolbox">
-    <div class="container">
-      <h2>My Toolbox</h2>
-      <h3>Tools I usually use when I develop new web services.</h3>
-      <ul>
-        <li>Ruby</li>
-        <li>Ruby on Rails</li>
-        <li>SASS</li>
-        <li>CoffeeScript</li>
-        <li>Bootstrap</li>
-        <li>jQuery</li>
-        <li>PostgreSQL</li>
-        <li>MongoDB</li>
-        <li>Redis</li>
-        <li>Nginx</li>
-        <li>Heroku</li>
-        <li>AWS</li>
-        <li>CloudFlare</li>
-        <li>GitHub</li>
-        <li>Adobe Illustrator</li>
-        <li>Google Analytics</li>
-        <li>Google Docs</li>
-        <li>Slack</li>
-      </ul>
-      <p>Of course, I'm always eager to learn new skills.</p>
+    <div class="project col-sm-6">
+      <%= link_to image_tag('railslink.png', size: '320x221'), "http://www.rubyonrails.link", target: :new %>
+      <h3>
+        <a href="http://www.rubyonrails.link" target="new">Ruby on Rails Link</a>
+      </h3>
+      <p>Global Ruby on Rails community on Slack.<br>I'm one of the organizer of this community.</p>
     </div>
   </section>
   
@@ -67,10 +45,6 @@
         <li><%= link_to fa_icon('instagram'), 'https://instagram.com/moriokumura/', target: :blank %></li>
         <li><%= link_to fa_icon('github'), 'https://github.com/moriokumura', target: :blank %></li>
       </ul>
-      <p>
-         I'm most active on Twitter, so if you want to know more about me, please follow <a href="https://twitter.com/intent/follow?screen_name=moriook" target="_blank">@moriook</a>
-      </p>
-      <%= mail_to 'morio.okumura@gmail.com', 'Contact me', target: :blank, class: 'contact-me' %>
     </div>
     
   </section>
