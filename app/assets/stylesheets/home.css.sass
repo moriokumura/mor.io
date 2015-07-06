@@ -25,6 +25,8 @@
 		background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjMzMzIj48L3JlY3Q+CjxwYXRoIGQ9Ik0wIDVMNSAwWk02IDRMNCA2Wk0tMSAxTDEgLTFaIiBzdHJva2U9IiM0NDQiIHN0cm9rZS13aWR0aD0iMSI+PC9wYXRoPgo8L3N2Zz4=")
 		padding: 180px 0
 		position: relative
+		@media (max-width: $screen-xs-min)
+			padding: 100px 0
 		.myicon
 			position: absolute
 			margin-top: 8px
@@ -55,6 +57,9 @@
 				font-weight: bold
 		img
 			border-radius: 5px
+			@media (max-width: $screen-xs-min)
+				max-height: 200px
+				max-width: 290px
 		.project
 			margin-bottom: 80px
 	#social-links
