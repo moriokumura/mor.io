@@ -34,6 +34,7 @@ gem 'newrelic_rpm'
 gem 'rollbar'
 
 group :development, :test do
+  gem 'dotenv-rails'
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-byebug'
