@@ -57,9 +57,12 @@
 				font-weight: bold
 		img
 			border-radius: 5px
+			@media (min-width: $screen-xs-min + 1)
+				height: 221px
+				width: 320px
 			@media (max-width: $screen-xs-min)
-				max-height: 200px
-				max-width: 290px
+				height: 200px
+				width: 290px
 		.project
 			margin-bottom: 80px
 	#social-links
