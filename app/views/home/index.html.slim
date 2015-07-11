@@ -1,0 +1,56 @@
+- content_for :title do 'Morio Okumura' end
+- content_for :description do 'Software engineer working with Slack and Ruby on Rails.' end
+#home-index
+  section#whoiam
+    .container
+      .myicon
+        = image_tag 'my_photo.jpg', size: '72x72'
+      p.text
+        |  Hi, I'm Morio Okumura.
+        br
+        |  I'm software engineer mostly working with Ruby on Rails.
+        br
+        |  You can see my tech stack at 
+        a href="http://stackshare.io/moriokumura" target="new"
+          | here
+        | . Follow me on 
+        a href="https://twitter.com/moriook" target="new"
+          | Twitter
+        |  to get in touch. 
+  section#myprojects
+    .container
+      .row
+        h2 My Projects
+        .project.col-sm-6
+          = link_to image_tag('fastvoted.png'), "http://fastvoted.com", target: :new
+          h3
+            = link_to 'FastVoted', "http://fastvoted.com", target: :new
+          p
+            | Get trending social news in your Slack.
+            br
+            | I'm creator of this service.
+        .project.col-sm-6
+          = link_to image_tag('railslink.png'), "http://www.rubyonrails.link", target: :new
+          h3
+            = link_to 'Ruby on Rails Link', "http://www.rubyonrails.link", target: :new
+          p
+            | Global Ruby on Rails community on Slack.
+            br
+            | I'm one of the organizer of this community.
+  section#social-links
+    .container
+      h2 You can see me on
+      ul.social-links
+        li
+          = link_to fa_icon('twitter'), 'https://twitter.com/moriook', target: :blank
+        li
+          = link_to fa_icon('facebook-official'), 'https://www.facebook.com/morio.okumura', target: :blank
+        li
+          = link_to fa_icon('linkedin-square'), 'https://www.linkedin.com/in/moriookumura', target: :blank
+        li
+          = link_to fa_icon('medium'), 'https://medium.com/@moriookumura', target: :blank
+        li
+          = link_to fa_icon('instagram'), 'https://instagram.com/moriokumura/', target: :blank
+        li
+          = link_to fa_icon('github'), 'https://github.com/moriokumura', target: :blank
+= render partial: 'shared/footer'
